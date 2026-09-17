@@ -1,4 +1,4 @@
-# Windows Docker 사전 준비
+# Windows Docker 사전 준비$$$S
 
 이 문서는 `01_simple-multi-llm-compose`를 시작하기 전에 한 번만 진행합니다. 강의실·회사 PC는
 Windows 기능 변경이 제한될 수 있으므로 수업 전에 관리자 권한을 확인합니다.
@@ -13,12 +13,12 @@ docker compose version
 wsl --status
 ```
 
-| 결과 | 다음 행동 |
-| --- | --- |
-| Docker Client와 Server가 모두 표시됨 | 01 Simple Compose로 이동 |
-| `docker` 명령을 찾지 못함 | WSL 2 확인 후 Docker Desktop 설치 |
-| WSL 선택 기능이 필요하다는 메시지 | 아래 Windows 기능 활성화 |
-| 회사 정책·관리자 권한 오류 | 임의 우회하지 말고 관리자 또는 강사에게 요청 |
+| 결과                                 | 다음 행동                                    |
+| ------------------------------------ | -------------------------------------------- |
+| Docker Client와 Server가 모두 표시됨 | 01 Simple Compose로 이동                     |
+| `docker` 명령을 찾지 못함            | WSL 2 확인 후 Docker Desktop 설치            |
+| WSL 선택 기능이 필요하다는 메시지    | 아래 Windows 기능 활성화                     |
+| 회사 정책·관리자 권한 오류           | 임의 우회하지 말고 관리자 또는 강사에게 요청 |
 
 ## 2. WSL 2 기능 활성화
 
@@ -59,12 +59,12 @@ docker run --rm hello-world
 
 정상 상태에서는 다음을 확인합니다.
 
-| 명령 | 정상 확인 기준 |
-| --- | --- |
-| `wsl --status` | 기본 버전이 2이고 오류가 없음 |
-| `docker version` | Client와 Server가 모두 표시됨 |
-| `docker compose version` | Compose 버전이 표시됨 |
-| `docker run --rm hello-world` | 성공 안내 뒤 종료 코드 0 |
+| 명령                          | 정상 확인 기준                |
+| ----------------------------- | ----------------------------- |
+| `wsl --status`                | 기본 버전이 2이고 오류가 없음 |
+| `docker version`              | Client와 Server가 모두 표시됨 |
+| `docker compose version`      | Compose 버전이 표시됨         |
+| `docker run --rm hello-world` | 성공 안내 뒤 종료 코드 0      |
 
 ## 4. 과정 Port 확인
 
@@ -101,11 +101,11 @@ Runner 결과를 관찰할 수 있지만, 로컬 Container 실습 완료로 표�
 PostgreSQL/pgvector, Redis, Ollama를 Docker Container로 준비합니다. 아래 명령은 모두
 **일반 PowerShell**에서 실행합니다.
 
-| 서비스 | Container 이름 | Host Port | 데이터 Volume | 주요 용도 |
-| --- | --- | --- | --- | --- |
-| PostgreSQL/pgvector | `aidevs-pgvector` | `5433` | `aidevs-pgvector-data` | RAG·장기 Memory·실행 이력 |
-| Redis | `aidevs-redis` | `6379` | `aidevs-redis-data` | 진행 상태·Cache·짧은 Session |
-| Ollama | `aidevs-ollama` | `11434` | `aidevs-ollama-data` | Llama·Gemma Local LLM 실행 |
+| 서비스              | Container 이름    | Host Port | 데이터 Volume          | 주요 용도                    |
+| ------------------- | ----------------- | --------- | ---------------------- | ---------------------------- |
+| PostgreSQL/pgvector | `aidevs-pgvector` | `5433`    | `aidevs-pgvector-data` | RAG·장기 Memory·실행 이력    |
+| Redis               | `aidevs-redis`    | `6379`    | `aidevs-redis-data`    | 진행 상태·Cache·짧은 Session |
+| Ollama              | `aidevs-ollama`   | `11434`   | `aidevs-ollama-data`   | Llama·Gemma Local LLM 실행   |
 
 Named Volume을 사용하므로 Container를 중지하거나 다시 시작해도 Database와 내려받은
 Ollama Model이 유지됩니다. 기존 Container가 있다면 새로 만들지 말고 아래의 “기존 환경
