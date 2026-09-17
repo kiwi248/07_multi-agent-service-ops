@@ -3,11 +3,11 @@ name: 07 Runtime CI
 on:
   push:
     paths:
-      - "07_multi-agent-service-ops/00_runtime-and-deployment/**"
+      - "00_runtime-and-deployment/**"
       - ".github/workflows/07-runtime-ci.yml"
   pull_request:
     paths:
-      - "07_multi-agent-service-ops/00_runtime-and-deployment/**"
+      - "00_runtime-and-deployment/**"
       - ".github/workflows/07-runtime-ci.yml"
   workflow_dispatch:
 
